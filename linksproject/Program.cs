@@ -5,18 +5,17 @@ using Project.Data;
 using Project.Data.Repositories;
 using Project.Service;
 
-internal class Program
-{
-    private static void Main(string[] args)
-    {
-        var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+// Add services to the container.
 
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddSwaggerGen(); 
+
+builder.Services.AddControllers();
         //קטגוריה
         builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
         builder.Services.AddScoped<ICategoryService, CategoryService>();
@@ -29,24 +28,25 @@ internal class Program
         //אתרים
         builder.Services.AddScoped<IWebRepository, WebRepository>();
         builder.Services.AddScoped<IWebService, WebService>();
-        //דאטה קונטכס
-        builder.Services.AddDbContext<DataContext>();
+//דאטה קונטכס
+builder.Services.AddDbContext<DataContext>();
 
-        var app = builder.Build();
+var app = builder.Build();
 
-        app.UseHttpsRedirection();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 
-        app.UseAuthorization();
+{ 
 
-        app.UseSwagger();
-        app.UseSwaggerUI(c =>
-        {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            c.RoutePrefix = string.Empty;
-        });
+app.UseSwagger();
+app.UseSwaggerUI();
 
-        app.MapControllers();
-
-        app.Run();
-    }
 }
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

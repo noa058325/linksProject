@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.data\\links.data.csproj": {}
+    "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\links.core.csproj": {
+    "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\links.core.csproj",
+        "projectUniqueName": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj",
         "projectName": "links.core",
-        "projectPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\links.core.csproj",
+        "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\obj\\",
+        "outputPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,7 +39,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -60,18 +66,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.data\\links.data.csproj": {
+    "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.data\\links.data.csproj",
+        "projectUniqueName": "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj",
         "projectName": "links.data",
-        "projectPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.data\\links.data.csproj",
+        "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.data\\obj\\",
+        "outputPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,8 +99,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\links.core.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\links.core.csproj"
+              "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj": {
+                "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj"
               }
             }
           }
@@ -103,7 +109,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -136,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

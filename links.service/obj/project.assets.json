@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.service\\links.service.csproj",
+      "projectUniqueName": "C:\\aתכנות\\פרויקט\\LinksProject\\links.service\\links.service.csproj",
       "projectName": "links.service",
-      "projectPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.service\\links.service.csproj",
+      "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.service\\links.service.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.service\\obj\\",
+      "outputPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,8 +59,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\links.core.csproj": {
-              "projectPath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\links.core\\links.core.csproj"
+            "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj": {
+              "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj"
             }
           }
         }
@@ -69,7 +69,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net6.0": {
@@ -90,7 +96,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

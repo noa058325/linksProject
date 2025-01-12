@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N6auVvnjzwJfv2Ia88wRVydYDNs0XkX8vCHGcrC/fiW987wpF07d4Aqvb3CIIERkQUSQTwHuAgkQ6C6ui+jAAg==",
+  "dgSpecHash": "5WG25cSAtq4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\פרוייקט api c#\\links\\linksproject\\linksproject.csproj",
+  "projectFilePath": "C:\\aתכנות\\פרויקט\\LinksProject\\linksproject\\linksproject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\lightinject\\5.4.0\\lightinject.5.4.0.nupkg.sha512",
