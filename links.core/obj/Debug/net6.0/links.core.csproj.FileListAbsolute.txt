@@ -22,3 +22,15 @@ C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.
 C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\refint\links.core.dll
 C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.pdb
 C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\ref\links.core.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\bin\Debug\net6.0\links.core.deps.json
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\bin\Debug\net6.0\links.core.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\bin\Debug\net6.0\links.core.pdb
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.csproj.AssemblyReference.cache
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.GeneratedMSBuildEditorConfig.editorconfig
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.AssemblyInfoInputs.cache
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.AssemblyInfo.cs
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.csproj.CoreCompileInputs.cache
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\refint\links.core.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.pdb
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\ref\links.core.dll

@@ -9,10 +9,10 @@ namespace Project.Core.Repositories
 {
         public interface IRecommendRepository
         {
-            List<User> GetAll();
-            User GetById(int id);
-            void Add(User user);
-            void Update(User user);
+            List<Recommend> GetAll();
+        Recommend GetById(int id);
+            void Add(Recommend user);
+            void Update(Recommend user);
             void Delete(int id);
         }
     

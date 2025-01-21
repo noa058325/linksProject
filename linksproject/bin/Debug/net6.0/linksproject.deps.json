@@ -1760,10 +1760,7 @@
       },
       "links.core/1.0.0": {
         "runtime": {
-          "links.core.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "links.core.dll": {}
         }
       },
       "links.data/1.0.0": {
@@ -1772,10 +1769,7 @@
           "links.core": "1.0.0"
         },
         "runtime": {
-          "links.data.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "links.data.dll": {}
         }
       },
       "links.service/1.0.0": {
@@ -1783,10 +1777,7 @@
           "links.core": "1.0.0"
         },
         "runtime": {
-          "links.service.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "links.service.dll": {}
         }
       }
     }

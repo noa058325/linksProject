@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj": {}
+    "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.data\\links.data.csproj": {}
   },
   "projects": {
-    "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj": {
+    "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.core\\links.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj",
+        "projectUniqueName": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.core\\links.core.csproj",
         "projectName": "links.core",
-        "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\obj\\",
+        "projectPath": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.core\\links.core.csproj",
+        "packagesPath": "C:\\Users\\talmid2\\.nuget\\packages\\",
+        "outputPath": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\talmid2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,13 +38,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net6.0": {
@@ -56,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -66,24 +58,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.316\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj": {
+    "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.data\\links.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj",
+        "projectUniqueName": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.data\\links.data.csproj",
         "projectName": "links.data",
-        "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\links.data.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.data\\obj\\",
+        "projectPath": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.data\\links.data.csproj",
+        "packagesPath": "C:\\Users\\talmid2\\.nuget\\packages\\",
+        "outputPath": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\talmid2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -92,15 +84,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj": {
-                "projectPath": "C:\\aתכנות\\פרויקט\\LinksProject\\links.core\\links.core.csproj"
+              "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.core\\links.core.csproj": {
+                "projectPath": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.core\\links.core.csproj"
               }
             }
           }
@@ -109,13 +100,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net6.0": {
@@ -138,8 +123,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -148,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.316\\RuntimeIdentifierGraph.json"
         }
       }
     }

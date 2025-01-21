@@ -19,35 +19,45 @@ namespace Project.Data.Repositories
         {
             _context = context;
         }
-
-        public void Add(Web web)
+        public List<Web> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DbSet<Web> GetAll()
-        {    //פונק'
-            return _context.Webs;
+            // מחזיר את כל אתרים
+            return _context.Webs.ToList();
         }
 
         public Web GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Webs.FirstOrDefault(c => c.id == id); // מחזיר אתר לפי מזהה
+        }
+
+        public void Add(Web web)
+        {
+            if (!_context.Webs.Any(c => c.id == web.id))
+            {
+                _context.Webs.Add(web); // מוסיף אתר חדשה אם המזהה לא קיים
+                _context.SaveChanges();
+            }
         }
 
         public void Update(Web web)
         {
-            throw new NotImplementedException();
+            var existingWeb = _context.Webs.FirstOrDefault(c => c.id == web.id);
+            if (existingWeb != null)
+            {
+                existingWeb.name = web.name; // מעדכן שם אתר
+                _context.SaveChanges();
+            }
+
         }
 
-        List<Web> IWebRepository.GetAll()
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var web = _context.Webs.FirstOrDefault(c => c.id == id);
+            if (web != null)
+            {
+                _context.Webs.Remove(web); // מוחק אתר מהרשימה
+                _context.SaveChanges();
+            }
         }
     }
 }

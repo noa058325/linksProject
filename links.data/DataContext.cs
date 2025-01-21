@@ -8,10 +8,9 @@ namespace Project.Data
     public class DataContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-      
         public DbSet<Web> Webs { get; set; }
         public DbSet<Category> Categories { get;  set; }
-        public DbSet<Recommend> recommends { get;  set; }
+        public DbSet<Recommend> Recommends { get;  set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -33,3 +33,20 @@ C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\refint\link
 C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.pdb
 C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.genruntimeconfig.cache
 C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\ref\links.data.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.data.deps.json
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.data.runtimeconfig.json
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.data.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.data.pdb
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.core.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.core.pdb
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.csproj.AssemblyReference.cache
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.GeneratedMSBuildEditorConfig.editorconfig
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.AssemblyInfoInputs.cache
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.AssemblyInfo.cs
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.csproj.CoreCompileInputs.cache
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.csproj.CopyComplete
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\refint\links.data.dll
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.pdb
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.genruntimeconfig.cache
+Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\ref\links.data.dll

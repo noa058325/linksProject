@@ -43,24 +43,11 @@ namespace Project.Service
             return null; // אם הקטגוריה לא קיימת
         }
 
-        public void DeleteCategory(int id)
+        public void Deletecategory(int id)
         {
             _categoryRepository.Delete(id); // מוחק קטגוריה לפי מזהה
         }
-
-        List<User> ICategoryService.GetList()
-        {
-            throw new NotImplementedException();
-        }
-
-        User ICategoryService.GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        void ICategoryService.Deletecategory(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
+
+

@@ -18,34 +18,44 @@ namespace Project.Data.Repositories
         {
             _context = context;
         }
-        public DbSet<User> GetAll()
+        public List<User> GetAll()
         {    //פונק'
-            return _context.Users;
+            return _context.Users.ToList();
+        }
+       
+        public User GetById(int id)
+        {
+            return _context.Users.FirstOrDefault(c => c.id == id); // מחזיר משתמש לפי מזהה
         }
 
-        void IUserRepository.Add(User user)
+        public void Add(User user)
         {
-            throw new NotImplementedException();
+            if (!_context.Users.Any(c => c.id == user.id))
+            {
+                _context.Users.Add(user); // מוסיף משתמש חדשה אם המזהה לא קיים
+                _context.SaveChanges();
+            }
         }
 
-        void IUserRepository.Delete(int id)
+        public void Update(User user)
         {
-            throw new NotImplementedException();
+            var existingUser = _context.Users.FirstOrDefault(c => c.id == user.id);
+            if (existingUser != null)
+            {
+                existingUser.name = user.name; // מעדכן שם משתמש
+                _context.SaveChanges();
+            }
+
         }
 
-        List<User> IUserRepository.GetAll()
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        User IUserRepository.GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IUserRepository.Update(User user)
-        {
-            throw new NotImplementedException();
+            var user = _context.Users.FirstOrDefault(c => c.id == id);
+            if (user != null)
+            {
+                _context.Users.Remove(user); // מוחק משתמש מהרשימה
+                _context.SaveChanges();
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using Project.Entities;
 
 namespace Project.Data.Repositories
 {
-    public class RecommendRepository: IRecommendRepository
+    public class RecommendRepository : IRecommendRepository
     {
         private readonly DataContext _context;
 
@@ -12,34 +12,42 @@ namespace Project.Data.Repositories
         {
             _context = context;
         }
-        public DbSet<Recommend> GetAll()
-        {    //פונק'
-            return _context.recommends;
+
+        public List<Recommend> GetAll()
+        {
+            // מחזיר את כל ההמלצות
+            return _context.Recommends.ToList();
         }
 
-        void IRecommendRepository.Add(User user)
+        public Recommend GetById(int id)
         {
-            throw new NotImplementedException();
+            // מחזיר המלצה לפי מזהה
+            return _context.Recommends.FirstOrDefault(r => r.Id == id);
         }
 
-        void IRecommendRepository.Delete(int id)
+        public void Add(Recommend recommend)
         {
-            throw new NotImplementedException();
+            // מוסיף המלצה חדשה
+            _context.Recommends.Add(recommend);
+            _context.SaveChanges();
         }
 
-        List<User> IRecommendRepository.GetAll()
+        public void Update(Recommend recommend)
         {
-            throw new NotImplementedException();
+            // מעדכן את ההמלצה הקיימת
+            _context.Recommends.Update(recommend);
+            _context.SaveChanges();
         }
 
-        User IRecommendRepository.GetById(int id)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        void IRecommendRepository.Update(User user)
-        {
-            throw new NotImplementedException();
+            // מוחק המלצה לפי מזהה
+            var recommend = _context.Recommends.FirstOrDefault(r => r.Id == id);
+            if (recommend != null)
+            {
+                _context.Recommends.Remove(recommend);
+                _context.SaveChanges();
+            }
         }
     }
 }

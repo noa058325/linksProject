@@ -9,8 +9,8 @@ namespace Project.Core.services
 {
     public interface ICategoryService
     {
-        public List<User> GetList();
-        public User GetById(int id);
+        public List<Category> GetList();
+        public Category GetById(int id);
         public Category Add(Category category);
         public Category Update(int id, Category value);
         public void Deletecategory(int id);
