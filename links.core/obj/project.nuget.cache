@@ -1,16 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pYlmSOO5o/KIJ/mhkynqYrIJg/Fj8cQerYOr3U0Iyf5uqNinIESDZgitf1T9YINbxagJeXPT4i9XvVP8tCiZxw==",
+  "dgSpecHash": "nk/FPRAR76GhIdEOtFxpC+SFdEpvc5wCSuzhC0BcbLT13SNnA1p48gJ4JZ1r3Rl2Bmh81CkdPB3CMMTKS0PsBw==",
   "success": true,
   "projectFilePath": "Y:\\הנדסת תוכנה תשפה\\שונות\\.net core\\LinksProject\\links.core\\links.core.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\talmid2\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\talmid2\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
-    "C:\\Users\\talmid2\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\talmid2\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\talmid2\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
-    "C:\\Users\\talmid2\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\talmid2\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
