@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Project.Entities;
-using Project.Core.Services;
-using Project.Core.services;
+using links.Entities;
+using links.Core.Services;
+using links.Core.services;
 
-namespace Project.Controllers
+namespace links.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,7 +1,7 @@
-﻿using Project.Data;
-using Project.Entities;
+﻿using links.Data;
+using links.Entities;
 
-namespace Project.Core.Repositories
+namespace links.Core.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {

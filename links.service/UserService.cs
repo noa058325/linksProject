@@ -1,6 +1,6 @@
-﻿using Project.Entities;
+﻿using links.Entities;
 
-namespace Project.Core.Services
+namespace links.Core.Services
 {
     public class UserService : IUserService
     {

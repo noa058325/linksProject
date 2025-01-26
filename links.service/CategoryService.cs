@@ -1,9 +1,9 @@
-﻿using Project.Core.Repositories;
-using Project.Core.services;
-using Project.Entities;
+﻿using links.Core.Repositories;
+using links.Core.services;
+using links.Entities;
 using System.Collections.Generic;
 
-namespace Project.Service
+namespace links.Service
 {
     public class CategoryService : ICategoryService
     {

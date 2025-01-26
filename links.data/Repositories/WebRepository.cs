@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Project.Core.Repositories;
-using Project.Entities;
+using links.Core.Repositories;
+using links.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Data.Repositories
+namespace links.Data.Repositories
 {
     public class WebRepository : IWebRepository
     {

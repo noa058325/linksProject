@@ -1,10 +1,10 @@
-﻿using Project.Core.services;
-using Project.Entities;
+﻿using links.Core.services;
+using links.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Project.Core.Services
+namespace links.Core.Services
 {
     public class WebService : IWebService
     {

@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "MM1GpOF5Yx6fNE64rGvZ3hXEKZU3AK8Tz/7WWXeaDn0=",
+  "Hash": "iazSEHuOiXJvTNVqW0xj5ZYZhTqzFQ4kl5GbvO1/URU=",
   "Source": "linksproject",
   "BasePath": "_content/linksproject",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

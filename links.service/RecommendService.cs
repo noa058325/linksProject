@@ -1,6 +1,6 @@
-﻿using Project.Entities;
+﻿using links.Entities;
 
-namespace Project.Core.services
+namespace links.Core.services
 {
     public class RecommendService : IRecommendService
     {

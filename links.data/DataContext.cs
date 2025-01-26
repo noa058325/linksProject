@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 using Microsoft.EntityFrameworkCore;
-using Project.Entities;
+using links.Entities;
 
-namespace Project.Data
+namespace links.Data
 {
     public class DataContext : DbContext
     {

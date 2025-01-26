@@ -1,8 +1,8 @@
 ﻿
-using Project.Entities;
+using links.Entities;
 using System.Collections.Generic;
 
-namespace Project.Core.services
+namespace links.Core.services
 {
     public interface IRecommendService
     {

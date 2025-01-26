@@ -1,7 +1,7 @@
-﻿using Project.Entities;
+﻿using links.Entities;
 using System.Collections.Generic;
 
-namespace Project.Core.Repositories
+namespace links.Core.Repositories
 {
     public interface ICategoryRepository
     {

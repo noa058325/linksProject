@@ -1,7 +1,7 @@
-﻿using Project.Entities;
+﻿using links.Entities;
 using System.Collections.Generic;
 
-namespace Project.Core.Services
+namespace links.Core.Services
 {
     public interface IWebService
     {

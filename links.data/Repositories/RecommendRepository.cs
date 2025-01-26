@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Project.Core.Repositories;
-using Project.Entities;
+using links.Core.Repositories;
+using links.Entities;
 
-namespace Project.Data.Repositories
+namespace links.Data.Repositories
 {
     public class RecommendRepository : IRecommendRepository
     {

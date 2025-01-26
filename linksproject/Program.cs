@@ -1,9 +1,9 @@
-using Project.Core.Repositories;
-using Project.Core.services;
-using Project.Core.Services;
-using Project.Data;
-using Project.Data.Repositories;
-using Project.Service;
+using links.Core.Repositories;
+using links.Core.services;
+using links.Core.Services;
+using links.Data;
+using links.Data.Repositories;
+using links.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 

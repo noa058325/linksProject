@@ -1,4 +1,4 @@
-﻿namespace Project.Entities
+﻿namespace links.Entities
 {
     public class Category
     {
