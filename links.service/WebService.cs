@@ -1,58 +1,58 @@
-﻿using links.Core.services;
+﻿using links.Core.Repositories;
 using links.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace links.Core.Services
 {
     public class WebService : IWebService
     {
-        private readonly List<Web> _webs;
+        private readonly IWebRepository _webRepository;
 
-        //public WebService()
-        //{
-        //    _webs = new List<Web>
-        //    {
-        //        new Web { id = 1, name = "Google", link = "https://www.google.com" },
-        //        new Web { id = 2, name = "Facebook", link = "https://www.facebook.com" }
-        //    };
-        //}
-
-        public List<Web> GetList()
+        // בנאי שמקבל את המחסן שאיתו נעבוד
+        public WebService(IWebRepository webRepository)
         {
-            return _webs;
+            _webRepository = webRepository;
         }
 
-        public Web GetById(int id)
+        // מחזיר את רשימת האתרים
+        public async Task<List<Web>> GetListAsync()
         {
-            return _webs.FirstOrDefault(w => w.id == id);
+            return await _webRepository.GetAllAsync();
         }
 
-        public Web Add(Web web)
+        // מחזיר אתר לפי מזהה
+        public async Task<Web> GetById(int id)
         {
-            _webs.Add(web);
-            return web;
+            return await _webRepository.GetById(id);
         }
 
-        public Web Update(int id, Web web)
+        // מוסיף אתר חדש למערכת
+        public async Task AddAsync(Web web)
         {
-            var existingWeb = _webs.FirstOrDefault(w => w.id == id);
+            await _webRepository.AddAsync(web);
+        }
+
+        // מעדכן פרטי אתר קיים
+        public async Task<Web> UpdateAsync(int id, Web web)
+        {
+            var existingWeb = await _webRepository.GetById(id);
             if (existingWeb != null)
             {
                 existingWeb.name = web.name;
                 existingWeb.link = web.link;
-                return existingWeb;
+                return await _webRepository.UpdateAsync(id, existingWeb);
             }
             return null;
         }
 
-        public bool Delete(int id)
+        // מוחק אתר לפי מזהה
+        public async Task<bool> Delete(int id)
         {
-            var web = _webs.FirstOrDefault(w => w.id == id);
+            var web = await _webRepository.GetById(id);
             if (web != null)
             {
-                _webs.Remove(web);
+                await _webRepository.Delete(id);
                 return true;
             }
             return false;

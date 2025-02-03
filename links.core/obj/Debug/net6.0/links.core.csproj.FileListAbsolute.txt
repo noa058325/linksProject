@@ -10,18 +10,6 @@ C:\Users\user\Desktop\פרוייקט api c#\links\links.core\obj\Debug\net6.0\li
 C:\Users\user\Desktop\פרוייקט api c#\links\links.core\obj\Debug\net6.0\refint\links.core.dll
 C:\Users\user\Desktop\פרוייקט api c#\links\links.core\obj\Debug\net6.0\links.core.pdb
 C:\Users\user\Desktop\פרוייקט api c#\links\links.core\obj\Debug\net6.0\ref\links.core.dll
-C:\aתכנות\פרויקט\LinksProject\links.core\bin\Debug\net6.0\links.core.deps.json
-C:\aתכנות\פרויקט\LinksProject\links.core\bin\Debug\net6.0\links.core.dll
-C:\aתכנות\פרויקט\LinksProject\links.core\bin\Debug\net6.0\links.core.pdb
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.GeneratedMSBuildEditorConfig.editorconfig
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.AssemblyInfoInputs.cache
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.AssemblyInfo.cs
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.csproj.CoreCompileInputs.cache
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.sourcelink.json
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.dll
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\refint\links.core.dll
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\links.core.pdb
-C:\aתכנות\פרויקט\LinksProject\links.core\obj\Debug\net6.0\ref\links.core.dll
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\bin\Debug\net6.0\links.core.deps.json
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\bin\Debug\net6.0\links.core.dll
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\bin\Debug\net6.0\links.core.pdb
@@ -34,3 +22,16 @@ Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\o
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\refint\links.core.dll
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\links.core.pdb
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.core\obj\Debug\net6.0\ref\links.core.dll
+C:\aתכנות\פרויקט\linksProject\links.core\bin\Debug\net6.0\links.core.deps.json
+C:\aתכנות\פרויקט\linksProject\links.core\bin\Debug\net6.0\links.core.dll
+C:\aתכנות\פרויקט\linksProject\links.core\bin\Debug\net6.0\links.core.pdb
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.csproj.AssemblyReference.cache
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.GeneratedMSBuildEditorConfig.editorconfig
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.AssemblyInfoInputs.cache
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.AssemblyInfo.cs
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.csproj.CoreCompileInputs.cache
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.sourcelink.json
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.dll
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\refint\links.core.dll
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\links.core.pdb
+C:\aתכנות\פרויקט\linksProject\links.core\obj\Debug\net6.0\ref\links.core.dll

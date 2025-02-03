@@ -1,10 +1,9 @@
 ﻿namespace linksproject.Models
 {
-    public class UserPostModel
+    public class WebPostModel
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string Email { get; set; }
-        public int PhoneNamber { get; set; }
+        public string link { get; set; }
     }
 }

@@ -1,14 +1,15 @@
 ﻿using links.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace links.Core.Repositories
 {
     public interface ICategoryRepository
     {
-        List<Category> GetAll(); // מחזיר את כל הקטגוריות
-        Category GetById(int id); // מחזיר קטגוריה לפי מזהה
-        void Add(Category category); // מוסיף קטגוריה חדשה
-        void Update(Category category); // מעדכן קטגוריה קיימת
-        void Delete(int id); // מוחק קטגוריה לפי מזהה
+        Task<List<Category>> GetAllAsync(); // מחזיר את כל הקטגוריות
+        Task<Category> GetByIdAsync(int id); // מחזיר קטגוריה לפי מזהה
+        Task AddAsync(Category category); // מוסיף קטגוריה חדשה
+        Task<Category> UpdateAsync(int id, Category category); // מעדכן קטגוריה קיימת
+        Task Delete(int id); // מוחק קטגוריה לפי מזהה
     }
 }

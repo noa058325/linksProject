@@ -1,21 +1,15 @@
 ﻿using links.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace links.Core.services
+namespace links.Core.Services
 {
     public interface ICategoryService
     {
-        public List<Category> GetList();
-        public Category GetById(int id);
-        public Category Add(Category category);
-        public Category Update(int id, Category value);
-        public void Deletecategory(int id);
-        
-        //public void Delete(int id);
-        //public void GetByid(int id);
+        Task<List<Category>> GetListAsync(); // מחזיר את כל הקטגוריות
+        Task<Category> GetByIdAsync(int id); // מחזיר קטגוריה לפי מזהה
+        Task AddAsync(Category category); // מוסיף קטגוריה חדשה
+        Task<Category> UpdateAsync(int id, Category category); // מעדכן קטגוריה קיימת
+        Task Delete(int id); // מוחק קטגוריה לפי מזהה
     }
 }

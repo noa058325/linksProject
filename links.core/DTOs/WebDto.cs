@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace links.core.DTOs
 {
-    internal class UserDto
+    internal class WebDto
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string Email { get; set; }
-        public int PhoneNamber { get; set; }
+        public string link { get; set; }
     }
 }

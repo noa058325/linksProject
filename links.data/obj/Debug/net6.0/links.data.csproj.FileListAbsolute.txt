@@ -15,24 +15,6 @@ C:\Users\user\Desktop\פרוייקט api c#\links\links.data\obj\Debug\net6.0\re
 C:\Users\user\Desktop\פרוייקט api c#\links\links.data\obj\Debug\net6.0\links.data.pdb
 C:\Users\user\Desktop\פרוייקט api c#\links\links.data\obj\Debug\net6.0\links.data.genruntimeconfig.cache
 C:\Users\user\Desktop\פרוייקט api c#\links\links.data\obj\Debug\net6.0\ref\links.data.dll
-C:\aתכנות\פרויקט\LinksProject\links.data\bin\Debug\net6.0\links.data.deps.json
-C:\aתכנות\פרויקט\LinksProject\links.data\bin\Debug\net6.0\links.data.runtimeconfig.json
-C:\aתכנות\פרויקט\LinksProject\links.data\bin\Debug\net6.0\links.data.dll
-C:\aתכנות\פרויקט\LinksProject\links.data\bin\Debug\net6.0\links.data.pdb
-C:\aתכנות\פרויקט\LinksProject\links.data\bin\Debug\net6.0\links.core.dll
-C:\aתכנות\פרויקט\LinksProject\links.data\bin\Debug\net6.0\links.core.pdb
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.csproj.AssemblyReference.cache
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.GeneratedMSBuildEditorConfig.editorconfig
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.AssemblyInfoInputs.cache
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.AssemblyInfo.cs
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.csproj.CoreCompileInputs.cache
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.sourcelink.json
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.csproj.Up2Date
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.dll
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\refint\links.data.dll
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.pdb
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\links.data.genruntimeconfig.cache
-C:\aתכנות\פרויקט\LinksProject\links.data\obj\Debug\net6.0\ref\links.data.dll
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.data.deps.json
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.data.runtimeconfig.json
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\bin\Debug\net6.0\links.data.dll
@@ -50,3 +32,21 @@ Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\o
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.pdb
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\links.data.genruntimeconfig.cache
 Y:\הנדסת תוכנה תשפה\שונות\.net core\LinksProject\links.data\obj\Debug\net6.0\ref\links.data.dll
+C:\aתכנות\פרויקט\linksProject\links.data\bin\Debug\net6.0\links.data.deps.json
+C:\aתכנות\פרויקט\linksProject\links.data\bin\Debug\net6.0\links.data.runtimeconfig.json
+C:\aתכנות\פרויקט\linksProject\links.data\bin\Debug\net6.0\links.data.dll
+C:\aתכנות\פרויקט\linksProject\links.data\bin\Debug\net6.0\links.data.pdb
+C:\aתכנות\פרויקט\linksProject\links.data\bin\Debug\net6.0\links.core.dll
+C:\aתכנות\פרויקט\linksProject\links.data\bin\Debug\net6.0\links.core.pdb
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.csproj.AssemblyReference.cache
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.AssemblyInfoInputs.cache
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.AssemblyInfo.cs
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.csproj.CoreCompileInputs.cache
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.sourcelink.json
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.csproj.Up2Date
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.dll
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\refint\links.data.dll
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.pdb
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\links.data.genruntimeconfig.cache
+C:\aתכנות\פרויקט\linksProject\links.data\obj\Debug\net6.0\ref\links.data.dll

@@ -1,73 +1,106 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using links.Core.services;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using links.Entities;
+using links.Core.Services;
+using links.core.DTOs;
 
-[Route("api/[controller]")]
-[ApiController]
-public class CategoriesController : ControllerBase
+
+namespace linksproject.Controllers
 {
-    private readonly ICategoryService _categoryService;
-
-    public CategoriesController(ICategoryService categoryService)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CategoriesController : ControllerBase
     {
-        _categoryService = categoryService; // תלות בשירות הקטגוריות
-    }
+        private readonly ICategoryService _categoryService; // שירות הקטגוריות
+        private readonly IMapper _mapper; // אובייקט למיפוי בין ישויות ל-DTO
 
-    [HttpGet]
-    public ActionResult Get()
-    {
-        return Ok(_categoryService.GetList()); // מחזיר את כל הקטגוריות
-    }
-
-    [HttpGet("{id}")]
-    public ActionResult GetById(int id)
-    {
-        var category = _categoryService.GetById(id);
-        if (category != null)
+        public CategoriesController(ICategoryService categoryService, IMapper mapper)
         {
-            return Ok(category); // מחזיר קטגוריה לפי מזהה אם קיימת
-        }
-        return NotFound(); // מחזיר שלא נמצא
-    }
-
-    [HttpPost]
-    public ActionResult Post([FromBody] Category category)
-    {
-        if (category == null || string.IsNullOrWhiteSpace(category.Name))
-        {
-            return BadRequest(); // בדיקה שהקטגוריה תקינה
+            _categoryService = categoryService;
+            _mapper = mapper;
         }
 
-        var createdCategory = _categoryService.Add(category);
-        return CreatedAtAction(nameof(GetById), new { id = createdCategory.Id }, createdCategory);
-    }
-
-    [HttpPut("{id}")]
-    public IActionResult Put(int id, [FromBody] Category value)
-    {
-        if (value == null || value.Id != id)
+        /// <summary>
+        /// מחזיר את כל הקטגוריות
+        /// </summary>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CategoryDto>>> GetAsync()
         {
-            return BadRequest(); // בדיקה שהנתונים תואמים
+            var categories = await _categoryService.GetListAsync(); // שליפת כל הקטגוריות
+            var categoryDtos = _mapper.Map<List<CategoryDto>>(categories); // מיפוי ל-DTO
+            return Ok(categoryDtos); // מחזיר את הנתונים ללקוח
         }
 
-        var updatedCategory = _categoryService.Update(id, value);
-        if (updatedCategory != null)
+        /// <summary>
+        /// מחזיר קטגוריה לפי מזהה
+        /// </summary>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CategoryDto>> GetById(int id)
         {
-            return Ok(updatedCategory);
-        }
-        return NotFound(); // אם הקטגוריה לא קיימת
-    }
+            var category = await _categoryService.GetByIdAsync(id); // שליפת קטגוריה לפי מזהה
+            if (category == null)
+            {
+                return NotFound(); // אם הקטגוריה לא קיימת מחזירים 404
+            }
 
-    [HttpDelete("{id}")]
-    public ActionResult Delete(int id)
-    {
-        var exists = _categoryService.GetById(id) != null;
-        if (!exists)
+            var categoryDto = _mapper.Map<CategoryDto>(category); // מיפוי ל-DTO
+            return Ok(categoryDto); // מחזיר את הקטגוריה ללקוח
+        }
+
+        /// <summary>
+        /// מוסיף קטגוריה חדשה
+        /// </summary>
+        [HttpPost]
+        public async Task<ActionResult<CategoryDto>> Post([FromBody] CategoryDto categoryDto)
         {
-            return NotFound(); // אם הקטגוריה לא קיימת
+            if (categoryDto == null || string.IsNullOrWhiteSpace(categoryDto.Name))
+            {
+                return BadRequest("שם הקטגוריה אינו תקין."); // בדיקה שהשם לא ריק
+            }
+
+            var category = _mapper.Map<Category>(categoryDto); // ממירים לישות
+            await _categoryService.AddAsync(category); // הוספת קטגוריה
+            var createdCategoryDto = _mapper.Map<CategoryDto>(category); // ממירים חזרה ל-DTO
+
+            return CreatedAtAction(nameof(GetById), new { id = category.Id }, createdCategoryDto); // מחזירים תשובה עם כתובת הקטגוריה החדשה
         }
 
-        _categoryService.Deletecategory(id);
-        return NoContent(); // מחזיר הצלחה ללא תוכן
+        /// <summary>
+        /// מעדכן קטגוריה קיימת לפי מזהה
+        /// </summary>
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] CategoryDto categoryDto)
+        {
+            if (categoryDto == null || id != categoryDto.Id)
+            {
+                return BadRequest("הקטגוריה לא תואמת את הנתונים שנשלחו.");
+            }
+
+            var category = _mapper.Map<Category>(categoryDto); // המרת DTO לישות
+            var updatedCategory = await _categoryService.UpdateAsync(id, category); // עדכון קטגוריה
+
+            if (updatedCategory == null)
+            {
+                return NotFound(); // אם הקטגוריה לא קיימת
+            }
+
+            return Ok(_mapper.Map<CategoryDto>(updatedCategory)); // מחזיר את הקטגוריה המעודכנת
+        }
+
+        /// <summary>
+        /// מוחק קטגוריה לפי מזהה
+        /// </summary>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var category = await _categoryService.GetByIdAsync(id);
+            if (category == null)
+            {
+                return NotFound(); // אם הקטגוריה לא קיימת
+            }
+
+            await _categoryService.Delete(id); // מחיקה בפועל
+            return NoContent(); // מחזירים הצלחה ללא תוכן
+        }
     }
 }

@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using links.Entities;
 using links.Core.Services;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using AutoMapper;
+using linksproject.Models;
 
 namespace links.Controllers
 {
@@ -9,71 +13,78 @@ namespace links.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IMapper _mapper;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IMapper mapper)
         {
             _userService = userService;
+            _mapper = mapper;
         }
 
-        // GET: api/Users
+        // מחזיר את כל המשתמשים
         [HttpGet]
-        public ActionResult Get()
+        public async Task<ActionResult<IEnumerable<User>>> Get()
         {
-            return Ok(_userService.GetList());
+            var users = await _userService.GetListAsync();
+            var userDto = _mapper.Map<List<User>>(users);
+            return Ok(userDto);
         }
 
-        // GET api/Users/5
+        // מחזיר משתמש לפי מזהה
         [HttpGet("{id}")]
         public ActionResult GetById(int id)
         {
             var user = _userService.GetById(id);
-            if (user != null)
+            if (user == null)
             {
-                return Ok(user);
+                return NotFound();
             }
-            return NotFound();
+            return Ok(user);
         }
 
-        // POST api/Users
+        // מוסיף משתמש חדש עם Mapper
         [HttpPost]
-        public ActionResult Post([FromBody] User user)
+        public async Task<ActionResult> Post([FromBody] UserPostModel userModel)
+        {
+            if (userModel == null)
+            {
+                return BadRequest();
+            }
+
+            var userEntity = _mapper.Map<User>(userModel);
+            var createdUser = await _userService.AddAsync(userEntity);
+
+            var userDto = _mapper.Map<User>(createdUser);
+            return CreatedAtAction(nameof(GetById), new { id = userDto.id }, userDto);
+        }
+
+        // מעדכן משתמש קיים
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] User user)
         {
             if (user == null)
             {
                 return BadRequest();
             }
 
-            var createdUser = _userService.Add(user);
-            return CreatedAtAction(nameof(GetById), new { id = createdUser.id }, createdUser);
+            var updatedUser = _userService.Update(id, user);
+            if (updatedUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(updatedUser);
         }
 
-        // PUT api/Users/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] User value)
-        {
-            if (value == null)
-            {
-                return BadRequest();
-            }
-
-            var updatedUser = _userService.Update(id, value);
-            if (updatedUser != null)
-            {
-                return Ok(updatedUser);
-            }
-            return NotFound();
-        }
-
-        // DELETE api/Users/5
+        // מוחק משתמש לפי מזהה
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var success = _userService.Delete(id);
-            if (success)
+            var success = await _userService.Delete(id);
+            if (!success)
             {
-                return NoContent();
+                return NotFound();
             }
-            return NotFound();
+            return NoContent();
         }
     }
 }

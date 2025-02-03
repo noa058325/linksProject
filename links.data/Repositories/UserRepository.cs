@@ -1,60 +1,57 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using links.Core.Repositories;
 using links.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace links.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {
-
         private readonly DataContext _context;
 
         public UserRepository(DataContext context)
         {
             _context = context;
         }
-        public List<User> GetAll()
-        {    //פונק'
-            return _context.Users.ToList();
+
+        public async Task<List<User>> GetAllAsync()
+        {
+            return await _context.Users.ToListAsync();
         }
-       
+
         public User GetById(int id)
         {
-            return _context.Users.FirstOrDefault(c => c.id == id); // מחזיר משתמש לפי מזהה
+            return _context.Users.FirstOrDefault(u => u.id == id);
         }
 
-        public void Add(User user)
+        public async Task AddAsync(User user)
         {
-            if (!_context.Users.Any(c => c.id == user.id))
-            {
-                _context.Users.Add(user); // מוסיף משתמש חדשה אם המזהה לא קיים
-                _context.SaveChanges();
-            }
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(User user)
+        public User Update(int id, User user)
         {
-            var existingUser = _context.Users.FirstOrDefault(c => c.id == user.id);
+            var existingUser = _context.Users.FirstOrDefault(u => u.id == id);
             if (existingUser != null)
             {
-                existingUser.name = user.name; // מעדכן שם משתמש
+                existingUser.name = user.name;
+                existingUser.Email = user.Email;
+                existingUser.PhoneNamber = user.PhoneNamber;
                 _context.SaveChanges();
+                return existingUser;
             }
-
+            return null;
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var user = _context.Users.FirstOrDefault(c => c.id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.id == id);
             if (user != null)
             {
-                _context.Users.Remove(user); // מוחק משתמש מהרשימה
-                _context.SaveChanges();
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
             }
         }
     }

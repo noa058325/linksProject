@@ -21,4 +21,8 @@
     <ProjectReference Include="..\links.service\links.service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Middleware\" />
+  </ItemGroup>
+
 </Project>

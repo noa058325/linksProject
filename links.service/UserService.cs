@@ -1,55 +1,56 @@
-﻿using links.Entities;
+﻿using links.Core.Repositories;
+using links.Core.Services;
+using links.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace links.Core.Services
+namespace links.Service
 {
     public class UserService : IUserService
     {
-        private readonly List<User> _users;
+        private readonly IUserRepository _userRepository;
 
-        //public UserService()
-        //{
-        //    _users = new List<User>
-        //    {
-        //        new User { id = 1, name = "John Doe", Email = "john@example.com", PhoneNamber = 1234567890 },
-                
-        //    };
-        //}
-
-        public List<User> GetList()
+        public UserService(IUserRepository userRepository)
         {
-            return _users;
+            _userRepository = userRepository;
+        }
+
+        public async Task<List<User>> GetListAsync()
+        {
+            return await _userRepository.GetAllAsync();
         }
 
         public User GetById(int id)
         {
-            return _users.FirstOrDefault(u => u.id == id);
+            return _userRepository.GetById(id);
         }
 
-        public User Add(User user)
+        public async Task<User> AddAsync(User user)
         {
-            _users.Add(user);
-            return user;
+            await _userRepository.AddAsync(user);
+            return user;  // מחזיר את המשתמש שנוסף
         }
 
         public User Update(int id, User user)
         {
-            var existingUser = _users.FirstOrDefault(u => u.id == id);
+            var existingUser = _userRepository.GetById(id);
             if (existingUser != null)
             {
                 existingUser.name = user.name;
                 existingUser.Email = user.Email;
                 existingUser.PhoneNamber = user.PhoneNamber;
-                return existingUser;
+
+                return _userRepository.Update(id, existingUser);
             }
             return null;
         }
 
-        public bool Delete(int id)
+        public async Task<bool> Delete(int id)
         {
-            var user = _users.FirstOrDefault(u => u.id == id);
+            var user = _userRepository.GetById(id);
             if (user != null)
             {
-                _users.Remove(user);
+                await _userRepository.Delete(id);
                 return true;
             }
             return false;

@@ -1,14 +1,15 @@
 ﻿using links.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace links.Core.Repositories
 {
     public interface IUserRepository
     {
-        List<User> GetAll();
-        User GetById(int id);
-        void Add(User user);
-        void Update(User user);
-        void Delete(int id);
+        Task<List<User>> GetAllAsync();  // מחזיר את כל המשתמשים
+        User GetById(int id);  // מחזיר משתמש לפי מזהה
+        Task AddAsync(User user);  // מוסיף משתמש חדש
+        User Update(int id, User user);  // מעדכן משתמש קיים
+        Task Delete(int id);  // מוחק משתמש
     }
 }

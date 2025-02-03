@@ -1,14 +1,15 @@
 ﻿using links.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace links.Core.Services
 {
     public interface IWebService
     {
-        List<Web> GetList();  // מקבל את כל האתרים
-        Web GetById(int id);  // מקבל אתר לפי מזהה
-        Web Add(Web web);  // מוסיף אתר חדש
-        Web Update(int id, Web web);  // מעדכן את פרטי האתר
-        bool Delete(int id);  // מוחק אתר
+        Task<List<Web>> GetListAsync();  // מחזיר את רשימת האתרים
+        Task<Web> GetById(int id);  // מחזיר אתר לפי מזהה
+        Task AddAsync(Web web);  // מוסיף אתר חדש
+        Task<Web> UpdateAsync(int id, Web web);  // מעדכן את פרטי האתר
+        Task<bool> Delete(int id);  // מוחק אתר ומחזיר אם הצליח
     }
 }

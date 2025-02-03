@@ -1,18 +1,15 @@
-﻿
-using links.Entities;
+﻿using links.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace links.Core.services
+namespace links.Core.Services
 {
     public interface IRecommendService
     {
-        List<Recommend> GetList();           // GET - מחזירה רשימה של המלצות
-        Recommend GetById(int id);           // GET BY ID - מחזירה המלצה לפי מזהה
-        void AddRecommend(Recommend recommend); // POST - מוסיפה המלצה חדשה
-        void UpdateRecommend(Recommend recommend); // PUT - מעדכנת המלצה קיימת
-        void DeleteRecommend(int id);         // DELETE - מסירה המלצה לפי מזהה (אופציונלי)
+        Task<List<Recommend>> GetListAsync();           // מחזיר רשימה של המלצות
+        Recommend GetById(int id);                      // מחזיר המלצה לפי מזהה
+        Task AddAsync(Recommend recommend);             // מוסיף המלצה חדשה
+        Recommend UpdateRecommend(Recommend recommend); // מעדכן המלצה קיימת
+        Task DeleteRecommendAsync(int id);              // מוחק המלצה לפי מזהה
     }
 }
-
-
-

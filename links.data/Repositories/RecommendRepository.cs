@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using links.Core.Repositories;
+﻿using links.Core.Repositories;
 using links.Entities;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace links.Data.Repositories
 {
@@ -13,40 +15,49 @@ namespace links.Data.Repositories
             _context = context;
         }
 
-        public List<Recommend> GetAll()
+        // מחזיר את כל ההמלצות
+        public async Task<List<Recommend>> GetAllAsync()
         {
-            // מחזיר את כל ההמלצות
-            return _context.Recommends.ToList();
+            return await _context.Recommends.ToListAsync();
         }
 
+        // מחזיר המלצה לפי מזהה
         public Recommend GetById(int id)
         {
-            // מחזיר המלצה לפי מזהה
             return _context.Recommends.FirstOrDefault(r => r.Id == id);
         }
 
-        public void Add(Recommend recommend)
+        // מוסיף המלצה חדשה
+        public async Task AddAsync(Recommend recommend)
         {
-            // מוסיף המלצה חדשה
             _context.Recommends.Add(recommend);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Recommend recommend)
+        // מעדכן המלצה קיימת
+        public Recommend Update(int id, Recommend recommend)
         {
-            // מעדכן את ההמלצה הקיימת
-            _context.Recommends.Update(recommend);
-            _context.SaveChanges();
+            var existingRecommend = _context.Recommends.FirstOrDefault(r => r.Id == id);
+            if (existingRecommend != null)
+            {
+                existingRecommend.Name = recommend.Name;
+                existingRecommend.Description = recommend.Description;
+                existingRecommend.idUser = recommend.idUser;
+
+                _context.SaveChanges();
+                return existingRecommend;
+            }
+            return null;
         }
 
-        public void Delete(int id)
+        // מוחק המלצה לפי מזהה
+        public async Task Delete(int id)
         {
-            // מוחק המלצה לפי מזהה
-            var recommend = _context.Recommends.FirstOrDefault(r => r.Id == id);
+            var recommend = await _context.Recommends.FirstOrDefaultAsync(r => r.Id == id);
             if (recommend != null)
             {
                 _context.Recommends.Remove(recommend);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }

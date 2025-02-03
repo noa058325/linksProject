@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using links.Core.services;
 using links.Entities;
-using System.Collections.Generic;
+using AutoMapper;
+using links.Core.Services;
+using linksproject.Models;
+
 
 namespace links.Controllers
 {
@@ -10,57 +12,58 @@ namespace links.Controllers
     public class RecommendController : ControllerBase
     {
         private readonly IRecommendService _recommendService;
+        private readonly IMapper _mapper;
 
-        public RecommendController(IRecommendService recommendService)
+        public RecommendController(IRecommendService recommendService, IMapper mapper)
         {
             _recommendService = recommendService;
+            _mapper = mapper;
         }
 
-        // GET: api/recommend
+        // מחזיר את כל ההמלצות
         [HttpGet]
-        public ActionResult<IEnumerable<Recommend>> Get()
+        public async Task<ActionResult<IEnumerable<Recommend>>> Get()
         {
-            return Ok(_recommendService.GetList());
+            var recommends = await _recommendService.GetListAsync();
+            var recommendDto = _mapper.Map<List<Recommend>>(recommends);
+            return Ok(recommendDto);
         }
 
-        // GET api/recommend/5
+        // מחזיר המלצה לפי מזהה
         [HttpGet("{id}")]
         public ActionResult<Recommend> GetById(int id)
         {
             var recommend = _recommendService.GetById(id);
             if (recommend == null)
-            {
                 return NotFound();
-            }
+
             return Ok(recommend);
         }
 
-        // POST api/recommend
+        // מוסיף המלצה חדשה
         [HttpPost]
-        public ActionResult Post([FromBody] Recommend recommend)
+        public async Task<ActionResult> Post([FromBody] RecommendPostModel recommend)
         {
-            _recommendService.AddRecommend(recommend);
+            await _recommendService.AddAsync(_mapper.Map<Recommend>(recommend));
             return CreatedAtAction(nameof(GetById), new { id = recommend.Id }, recommend);
         }
 
-        // PUT api/recommend/5
+        // מעדכן המלצה קיימת
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] Recommend recommend)
         {
             if (id != recommend.Id)
-            {
                 return BadRequest();
-            }
 
             _recommendService.UpdateRecommend(recommend);
             return NoContent();
         }
 
-        // DELETE api/recommend/5 
+        // מוחק המלצה לפי מזהה
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            _recommendService.DeleteRecommend(id);
+            await _recommendService.DeleteRecommendAsync(id);
             return NoContent();
         }
     }

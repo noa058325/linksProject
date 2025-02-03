@@ -1,11 +1,13 @@
 ﻿using links.Data;
 using links.Entities;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace links.Core.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
-        //private readonly List<Category> _categories = new List<Category>(); // רשימה שמחזיקה את הקטגוריות
         private readonly DataContext _context;
 
         public CategoryRepository(DataContext context)
@@ -13,43 +15,44 @@ namespace links.Core.Repositories
             _context = context;
         }
 
-        public List<Category> GetAll()
+        public async Task<List<Category>> GetAllAsync()
         {
-            return _context.Categories.ToList(); // מחזיר את כל הקטגוריות
+            return await _context.Categories.ToListAsync(); // מחזיר את כל הקטגוריות
         }
 
-        public Category GetById(int id)
+        public async Task<Category> GetByIdAsync(int id)
         {
-            return _context.Categories.FirstOrDefault(c => c.Id == id); // מחזיר קטגוריה לפי מזהה
+            return await _context.Categories.FirstOrDefaultAsync(c => c.Id == id); // מחזיר קטגוריה לפי מזהה
         }
 
-        public void Add(Category category)
+        public async Task AddAsync(Category category)
         {
-            if (!_context.Categories.Any(c => c.Id == category.Id))
+            if (!await _context.Categories.AnyAsync(c => c.Id == category.Id))
             {
-                _context.Categories.Add(category); // מוסיף קטגוריה חדשה אם המזהה לא קיים
-                _context.SaveChanges();
+                await _context.Categories.AddAsync(category); // מוסיף קטגוריה חדשה
+                await _context.SaveChangesAsync(); // שומר את השינויים
             }
         }
 
-        public void Update(Category category)
+        public async Task<Category> UpdateAsync(int id, Category category)
         {
-            var existingCategory = _context.Categories.FirstOrDefault(c => c.Id == category.Id);
+            var existingCategory = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
             if (existingCategory != null)
             {
                 existingCategory.Name = category.Name; // מעדכן שם קטגוריה
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
+                return existingCategory; // מחזיר את הקטגוריה המעודכנת
             }
-
+            return null; // מחזיר null אם הקטגוריה לא נמצאה
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var category = _context.Categories.FirstOrDefault(c => c.Id == id);
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
             if (category != null)
             {
-                _context.Categories.Remove(category); // מוחק קטגוריה מהרשימה
-                _context.SaveChanges();
+                _context.Categories.Remove(category); // מוחק קטגוריה
+                await _context.SaveChangesAsync(); // שומר את השינויים
             }
         }
     }

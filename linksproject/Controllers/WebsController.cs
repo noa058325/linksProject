@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using links.Entities;
 using links.Core.Services;
-using links.Core.services;
+using System.Threading.Tasks;
+using AutoMapper;
+using linksproject.Models;
 
 namespace links.Controllers
 {
@@ -10,71 +12,79 @@ namespace links.Controllers
     public class WebController : ControllerBase
     {
         private readonly IWebService _webService;
+        private readonly IMapper _mapper;
 
-        public WebController(IWebService webService)
+        // בנאי המקבל את השירות ואת המיפוי
+        public WebController(IWebService webService, IMapper mapper)
         {
             _webService = webService;
+            _mapper = mapper;
         }
 
-        // GET: api/Web
+        // מחזיר את כל האתרים הקיימים במערכת
         [HttpGet]
-        public ActionResult Get()
+        public async Task<ActionResult> Get()
         {
-            return Ok(_webService.GetList());
+            var webs = await _webService.GetListAsync();
+            var webDto = _mapper.Map<List<Web>>(webs);
+            return Ok(webDto);
         }
 
-        // GET api/Web/5
+        // מחזיר אתר לפי מזהה ספציפי
         [HttpGet("{id}")]
-        public ActionResult GetById(int id)
+        public async Task<ActionResult> GetById(int id)
         {
-            var web = _webService.GetById(id);
-            if (web != null)
+            var web = await _webService.GetById(id);
+            if (web == null)
             {
-                return Ok(web);
+                return NotFound();
             }
-            return NotFound();
+            return Ok(web);
         }
 
-        // POST api/Web
+        // מקבל נתוני אתר ומוסיף אותו למערכת עם Mapper
         [HttpPost]
-        public ActionResult Post([FromBody] Web web)
+        public async Task<ActionResult> Post([FromBody] WebPostModel webModel, object createdWeb)
+        {
+            if (webModel == null)
+            {
+                return BadRequest();
+            }
+
+            var webEntity = _mapper.Map<Web>(webModel);
+            _webService.AddAsync(webEntity);
+
+            var webDto = _mapper.Map<Web>(createdWeb);
+            return CreatedAtAction(nameof(GetById), new { id = webDto.id }, webDto);
+        }
+
+        // מעדכן נתונים של אתר קיים
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Web web)
         {
             if (web == null)
             {
                 return BadRequest();
             }
 
-            var createdWeb = _webService.Add(web);
-            return CreatedAtAction(nameof(GetById), new { id = createdWeb.id }, createdWeb);
+            var updatedWeb = await _webService.UpdateAsync(id, web);
+            if (updatedWeb == null)
+            {
+                return NotFound();
+            }
+            return Ok(updatedWeb);
         }
 
-        // PUT api/Web/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Web value)
-        {
-            if (value == null)
-            {
-                return BadRequest();
-            }
-
-            var updatedWeb = _webService.Update(id, value);
-            if (updatedWeb != null)
-            {
-                return Ok(updatedWeb);
-            }
-            return NotFound();
-        }
-
-        // DELETE api/Web/5
+        // מוחק אתר לפי מזהה
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var success = _webService.Delete(id);
-            if (success)
+            var success = await _webService.Delete(id);
+            if (!success)
             {
-                return NoContent();
+                return NotFound();
             }
-            return NotFound();
+            return NoContent();
         }
     }
 }

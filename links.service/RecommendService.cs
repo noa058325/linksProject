@@ -1,53 +1,57 @@
-﻿using links.Entities;
+﻿using links.Core.Repositories;
+using links.Core.Services;
+using links.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace links.Core.services
+namespace links.Service
 {
     public class RecommendService : IRecommendService
     {
-        private readonly List<Recommend> _recommends;
+        private readonly IRecommendRepository _recommendRepository;
 
-        //public RecommendService()
-        //{
-        //    _recommends = new List<Recommend>
-        //    {
-        //        new Recommend { Id = 1, Name = "Recommendation 1", Description = "Description for recommendation 1" },
-        //        new Recommend { Id = 2, Name = "Recommendation 2", Description = "Description for recommendation 2" },
-        //        // ניתן להוסיף המלצות נוספות לדוגמה
-        //    };
-        //}
-
-        public List<Recommend> GetList()
+        public RecommendService(IRecommendRepository recommendRepository)
         {
-            return _recommends;
+            _recommendRepository = recommendRepository;
         }
 
+        // מחזיר רשימה של המלצות
+        public async Task<List<Recommend>> GetListAsync()
+        {
+            return await _recommendRepository.GetAllAsync();
+        }
+
+        // מחזיר המלצה לפי מזהה
         public Recommend GetById(int id)
         {
-            return _recommends.FirstOrDefault(r => r.Id == id);
+            return _recommendRepository.GetById(id);
         }
 
-        public void AddRecommend(Recommend recommend)
+        // מוסיף המלצה חדשה
+        public async Task AddAsync(Recommend recommend)
         {
-            _recommends.Add(recommend);
+            await _recommendRepository.AddAsync(recommend);
         }
 
-        public void UpdateRecommend(Recommend recommend)
+        // מעדכן המלצה קיימת
+        public Recommend UpdateRecommend(Recommend recommend)
         {
-            var existingRecommend = GetById(recommend.Id);
+            var existingRecommend = _recommendRepository.GetById(recommend.Id);
             if (existingRecommend != null)
             {
                 existingRecommend.Name = recommend.Name;
                 existingRecommend.Description = recommend.Description;
+                existingRecommend.idUser = recommend.idUser;
+
+                return _recommendRepository.Update(recommend.Id, existingRecommend);
             }
+            return null;
         }
 
-        public void DeleteRecommend(int id)
+        // מוחק המלצה לפי מזהה
+        public async Task DeleteRecommendAsync(int id)
         {
-            var recommend = GetById(id);
-            if (recommend != null)
-            {
-                _recommends.Remove(recommend);
-            }
+            await _recommendRepository.Delete(id);
         }
     }
 }

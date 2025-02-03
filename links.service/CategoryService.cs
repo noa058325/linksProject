@@ -1,9 +1,9 @@
 ﻿using links.Core.Repositories;
-using links.Core.services;
 using links.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace links.Service
+namespace links.Core.Services
 {
     public class CategoryService : ICategoryService
     {
@@ -11,43 +11,32 @@ namespace links.Service
 
         public CategoryService(ICategoryRepository categoryRepository)
         {
-            _categoryRepository = categoryRepository; // תלות במחלקת האחסון
+            _categoryRepository = categoryRepository;
         }
 
-        public List<Category> GetList()
+        public async Task<List<Category>> GetListAsync()
         {
-            return _categoryRepository.GetAll(); // מחזיר את כל הקטגוריות
+            return await _categoryRepository.GetAllAsync(); // מחזיר את כל הקטגוריות
         }
 
-        public Category GetById(int id)
+        public async Task<Category> GetByIdAsync(int id)
         {
-            return _categoryRepository.GetById(id); // מחזיר קטגוריה לפי מזהה
+            return await _categoryRepository.GetByIdAsync(id); // מחזיר קטגוריה לפי מזהה
         }
 
-        public Category Add(Category category)
+        public async Task AddAsync(Category category)
         {
-            _categoryRepository.Add(category);
-            return category; // מחזיר את הקטגוריה שנוספה
+            await _categoryRepository.AddAsync(category); // מוסיף קטגוריה חדשה
         }
 
-        public Category Update(int id, Category value)
+        public async Task<Category> UpdateAsync(int id, Category category)
         {
-            var existingCategory = _categoryRepository.GetById(id);
-            if (existingCategory != null)
-            {
-                existingCategory.Name = value.Name;
-
-                _categoryRepository.Update(existingCategory);
-                return existingCategory; // מחזיר את הקטגוריה שעודכנה
-            }
-            return null; // אם הקטגוריה לא קיימת
+            return await _categoryRepository.UpdateAsync(id, category); // מעדכן קטגוריה קיימת
         }
 
-        public void Deletecategory(int id)
+        public async Task Delete(int id)
         {
-            _categoryRepository.Delete(id); // מוחק קטגוריה לפי מזהה
+            await _categoryRepository.Delete(id); // מוחק קטגוריה לפי מזהה
         }
     }
 }
-
-

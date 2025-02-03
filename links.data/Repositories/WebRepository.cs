@@ -1,62 +1,67 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using links.Core.Repositories;
 using links.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace links.Data.Repositories
 {
     public class WebRepository : IWebRepository
     {
-        
-
         private readonly DataContext _context;
 
         public WebRepository(DataContext context)
         {
             _context = context;
         }
-        public List<Web> GetAll()
+
+        // מחזיר את כל האתרים הקיימים
+        public async Task<List<Web>> GetAllAsync()
         {
-            // מחזיר את כל אתרים
-            return _context.Webs.ToList();
+            return await _context.Webs.ToListAsync();
         }
 
-        public Web GetById(int id)
+        // מחזיר אתר לפי מזהה
+        public async Task<Web> GetById(int id)
         {
-            return _context.Webs.FirstOrDefault(c => c.id == id); // מחזיר אתר לפי מזהה
+            return await _context.Webs.FirstOrDefaultAsync(c => c.id == id);
         }
 
-        public void Add(Web web)
+        // מוסיף אתר חדש
+        public async Task AddAsync(Web web)
         {
             if (!_context.Webs.Any(c => c.id == web.id))
             {
-                _context.Webs.Add(web); // מוסיף אתר חדשה אם המזהה לא קיים
-                _context.SaveChanges();
+                _context.Webs.Add(web);
+                await _context.SaveChangesAsync();
             }
         }
 
-        public void Update(Web web)
+        // מעדכן אתר קיים
+        public async Task<Web> UpdateAsync(int id, Web web)
         {
-            var existingWeb = _context.Webs.FirstOrDefault(c => c.id == web.id);
+            var existingWeb = await _context.Webs.FirstOrDefaultAsync(c => c.id == id);
             if (existingWeb != null)
             {
-                existingWeb.name = web.name; // מעדכן שם אתר
-                _context.SaveChanges();
+                existingWeb.name = web.name;
+                existingWeb.link = web.link;
+                existingWeb.idCategory = web.idCategory;
+                await _context.SaveChangesAsync();
+                return existingWeb;
             }
 
+            return null;
         }
 
-        public void Delete(int id)
+        // מוחק אתר
+        public async Task Delete(int id)
         {
-            var web = _context.Webs.FirstOrDefault(c => c.id == id);
+            var web = await _context.Webs.FirstOrDefaultAsync(c => c.id == id);
             if (web != null)
             {
-                _context.Webs.Remove(web); // מוחק אתר מהרשימה
-                _context.SaveChanges();
+                _context.Webs.Remove(web);
+                await _context.SaveChangesAsync();
             }
         }
     }

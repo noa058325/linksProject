@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5ZeIkQol3K0=",
+  "dgSpecHash": "+YCsrjB6rDM=",
   "success": true,
   "projectFilePath": "C:\\aתכנות\\פרויקט\\linksProject\\linksproject\\linksproject.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\lightinject\\5.4.0\\lightinject.5.4.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\lightinject.annotation\\1.1.0\\lightinject.annotation.1.1.0.nupkg.sha512",
