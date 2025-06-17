@@ -1,47 +1,47 @@
-# 🌐 LinkDiscounts
+# 🔗 LinksProject
 
-**Discover Hidden Gems & Save Money with Every Click**
+**Discover Hidden Gems & Get Exclusive Discounts**
 
 ---
 
 ## 📌 Overview
 
-**LinkDiscounts** is a full-stack web application built with **ASP.NET Core (C#)** on the backend and **Angular** on the frontend.  
-The platform helps promote lesser-known websites and rewards users with exclusive discounts when they access those sites through our referral links.
+**LinksProject** is a full-stack web application built with **ASP.NET Core (C#)** on the backend and **Angular** on the frontend.  
+The platform promotes lesser-known websites by offering users discounts when they access those sites via our tracked referral links.
 
-This project is designed to support:
-- 📣 Small business exposure
-- 💸 User incentives through tracked links
-- 📊 Real-time stats and insights (future feature)
+This project aims to:
+- 🌍 Expose niche or new websites
+- 💸 Provide users with valuable discounts
+- 📊 Enable tracking and analytics (future feature)
 
 ---
 
 ## ⚙️ Technologies Used
 
 ### Backend (.NET Core)
-- C# (ASP.NET Core Web API)
+- C# with ASP.NET Core Web API
 - Entity Framework Core
 - SQL Server
 
 ### Frontend (Angular)
 - Angular 16+
+- Angular Material or Bootstrap
 - RxJS
-- Angular Material (or Bootstrap)
 
-### DevOps & Tooling
+### Tooling & DevOps
 - Docker (optional)
-- Postman (API testing)
+- Postman (for API testing)
 - Visual Studio / VS Code
 
 ---
 
-## 🔑 Features (to be detailed by project owner)
+## 🔑 Core Features
 
-- 🔗 Curated list of hidden websites
-- 🎁 Discount redemption through special links
-- 🧾 User dashboard for tracking activity
-- 🔐 Secure login / signup
-- 📈 Admin panel for managing listings
+- 🧭 Explore unique websites
+- 🎁 Unlock discounts through special links
+- 🧾 User dashboard for tracking discounts
+- 🔐 Secure authentication and session handling
+- 🛠 Admin panel to manage site listings (optional)
 
 ---
 
@@ -49,9 +49,13 @@ This project is designed to support:
 
 ### Prerequisites
 - [.NET 7 SDK](https://dotnet.microsoft.com/download)
-- [Node.js and npm](https://nodejs.org/)
+- [Node.js + npm](https://nodejs.org/)
 - [Angular CLI](https://angular.io/cli)
-- SQL Server (local or remote)
+- SQL Server
 
-### Run Backend
-
+### Run the Backend
+```bash
+cd backend
+dotnet restore
+dotnet build
+dotnet run
